@@ -5,15 +5,17 @@ import SearchInput from "../components/searchInput/SearchInput";
 import CardCharacter from "../components/cardCharacter/CardCharacter";
 import { useEffect, useState } from "react";
 import getSearchCharacters from "../data/getSearchCharacters";
+import { Character } from "../interfaces/character.interface";
 
 const Characters = ({ loading }: any) => {
-    const [characters, setCharacters] = useState([]);
+    const [characters, setCharacters] = useState<Character[]>([]);
 
     useEffect(() => {
         const getChacters = async () => {
             try {
                 const fetchCharacters = await getSearchCharacters("as");
                 console.log(fetchCharacters);
+                setCharacters(fetchCharacters.results);
             } catch {
                 console.log("first");
             }
@@ -32,7 +34,17 @@ const Characters = ({ loading }: any) => {
                 alt="Logo"
             />
             <SearchInput />
-            <CardCharacter />
+            <ul>
+                {characters &&
+                    characters.map((character: Character) => {
+                        return (
+                            <li key={character.id}>
+                                <CardCharacter character={character} />
+                            </li>
+                        );
+                    })}
+            </ul>
+            {/* <CardCharacter /> */}
         </div>
     );
 };
