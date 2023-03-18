@@ -1,0 +1,12 @@
+.wrapCards {
+    display: grid;
+    gap: 32px;
+    margin-top: 32px;
+}
+@media screen and (min-width: 900px) {
+    .wrapCards {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        grid-gap: 24px 20px;
+        margin-top: 60px;
+    }
+}

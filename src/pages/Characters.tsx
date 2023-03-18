@@ -2,10 +2,10 @@ import rickMortyMob from "../assets/images/rick-morty-mobile.png";
 import rickMortyDes from "../assets/images/rick-morty-desktop.png";
 import css from "./Characters.module.css";
 import SearchInput from "../components/searchInput/SearchInput";
-import CardCharacter from "../components/cardCharacter/CardCharacter";
 import { useEffect, useState } from "react";
 import getSearchCharacters from "../data/getSearchCharacters";
 import { Character } from "../interfaces/character.interface";
+import CardListCharacter from "../components/cardListCharacter/CardListCharacter";
 
 const Characters = ({ loading }: any) => {
     const [characters, setCharacters] = useState<Character[]>([]);
@@ -34,17 +34,7 @@ const Characters = ({ loading }: any) => {
                 alt="Logo"
             />
             <SearchInput />
-            <ul>
-                {characters &&
-                    characters.map((character: Character) => {
-                        return (
-                            <li key={character.id}>
-                                <CardCharacter character={character} />
-                            </li>
-                        );
-                    })}
-            </ul>
-            {/* <CardCharacter /> */}
+            <CardListCharacter characters={characters} />
         </div>
     );
 };
