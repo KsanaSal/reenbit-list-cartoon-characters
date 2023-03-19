@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/reenbit-list-cartoon-characters/static/css/main.80496292.css",
-    "main.js": "/reenbit-list-cartoon-characters/static/js/main.39715d8f.js",
+    "main.css": "/reenbit-list-cartoon-characters/static/css/main.e3a91c69.css",
+    "main.js": "/reenbit-list-cartoon-characters/static/js/main.82616a3c.js",
     "static/js/787.dbd46db7.chunk.js": "/reenbit-list-cartoon-characters/static/js/787.dbd46db7.chunk.js",
     "static/media/rick-morty-desktop.png": "/reenbit-list-cartoon-characters/static/media/rick-morty-desktop.e8a6f9e9772983aa9417.png",
     "static/media/rick-morty-mobile.png": "/reenbit-list-cartoon-characters/static/media/rick-morty-mobile.7204047985809d7ee4fc.png",
     "index.html": "/reenbit-list-cartoon-characters/index.html",
     "static/media/search-icon.svg": "/reenbit-list-cartoon-characters/static/media/search-icon.c77a50f238257623b5e066b03e852c00.svg",
-    "main.80496292.css.map": "/reenbit-list-cartoon-characters/static/css/main.80496292.css.map",
-    "main.39715d8f.js.map": "/reenbit-list-cartoon-characters/static/js/main.39715d8f.js.map",
+    "main.e3a91c69.css.map": "/reenbit-list-cartoon-characters/static/css/main.e3a91c69.css.map",
+    "main.82616a3c.js.map": "/reenbit-list-cartoon-characters/static/js/main.82616a3c.js.map",
     "787.dbd46db7.chunk.js.map": "/reenbit-list-cartoon-characters/static/js/787.dbd46db7.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.80496292.css",
-    "static/js/main.39715d8f.js"
+    "static/css/main.e3a91c69.css",
+    "static/js/main.82616a3c.js"
   ]
 }
