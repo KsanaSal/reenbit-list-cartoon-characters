@@ -4,13 +4,16 @@ import css from "./CardCharacter.module.css";
 
 const CardCharacter = ({ character }: { character: Character }) => {
     return (
-        <div className={css.wrapCard}>
+        <a
+            className={css.wrapCard}
+            href={"/reenbit-list-cartoon-characters/details/" + character.id}
+        >
             <img src={character.image} alt="Character" />
             <div className={css.wrapTitle}>
                 <h2>{character.name}</h2>
                 <h3>{character.species}</h3>
             </div>
-        </div>
+        </a>
     );
 };
 

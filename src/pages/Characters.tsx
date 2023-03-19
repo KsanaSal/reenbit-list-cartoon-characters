@@ -11,16 +11,16 @@ const Characters = ({ loading }: any) => {
     const [characters, setCharacters] = useState<Character[]>([]);
 
     useEffect(() => {
-        const getChacters = async () => {
+        const getCharacters = async () => {
             try {
-                const fetchCharacters = await getSearchCharacters("as");
+                const fetchCharacters = await getSearchCharacters("rick");
                 console.log(fetchCharacters);
                 setCharacters(fetchCharacters.results);
             } catch {
                 console.log("first");
             }
         };
-        getChacters();
+        getCharacters();
     }, []);
 
     console.log(loading);
