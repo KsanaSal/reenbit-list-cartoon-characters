@@ -15,8 +15,10 @@ const Characters = () => {
     const [characters, setCharacters] = useState<Character[]>([]);
     const [info, setInfo] = useState();
     const [searchString, setSearchString] = useState(dataStor || "");
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
+        setLoading(true);
         const getCharacters = async () => {
             try {
                 const fetchCharacters = await getSearchCharacters(searchString);
@@ -37,6 +39,8 @@ const Characters = () => {
             } catch {
                 setCharacters([]);
                 console.log("first");
+            } finally {
+                setLoading(false);
             }
         };
         getCharacters();
@@ -73,6 +77,7 @@ const Characters = () => {
                 alt="Logo"
             />
             <SearchInput onSearch={handleSearch} />
+            {loading && <div className={css.hourglass}></div>}
             {characters.length ? (
                 <>
                     <CardListCharacter characters={characters} />

@@ -18,7 +18,6 @@ const SearchInput = ({ onSearch }: any) => {
                 placeholder="Filter by name ..."
                 autoFocus
                 defaultValue={localStorage.getItem("searchString") || ""}
-                // onChange={(e) => onChange(e.target.value)}
             />
             <button type="submit" className={css.button}>
                 <img src={searchIcon} alt="Search icon" />

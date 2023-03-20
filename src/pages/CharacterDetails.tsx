@@ -8,8 +8,10 @@ import css from "./CharacterDetails.module.css";
 const CharacterDetails = () => {
     const [character, setCharacter] = useState<Character | null>(null);
     const { id } = useParams();
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
+        setLoading(true);
         const getCharacter = async () => {
             try {
                 if (id) {
@@ -19,6 +21,8 @@ const CharacterDetails = () => {
                 }
             } catch {
                 console.log("first");
+            } finally {
+                setLoading(false);
             }
         };
         getCharacter();
@@ -31,6 +35,7 @@ const CharacterDetails = () => {
                 <img src={arrowBackIcon} alt="Arrow back" />
                 GO BACK
             </a>
+            {loading && <div className={css.hourglass}></div>}
             {character && (
                 <>
                     <div className={css.wrapImage}>
