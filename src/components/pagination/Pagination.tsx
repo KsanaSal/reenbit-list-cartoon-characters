@@ -1,32 +1,50 @@
 import { useState } from "react";
+import css from "./Pagination.module.css";
+import arrowRightIcon from "../../assets/icons/arrow-right-icon.svg";
+import arrowLeftIcon from "../../assets/icons/arrow-left-icon.svg";
 
 const Pagination = ({ info, onPageChange }: any) => {
     const [currentPage, setCurrentPage] = useState(1);
 
     const handleClickPrev = () => {
         onPageChange(info.prev);
-        console.log("prev");
-        // console.log(query);
         setCurrentPage(currentPage - 1);
-        // console.log(info.prev);
     };
     const handleClickNext = () => {
         onPageChange(info.next);
-        console.log("next");
         setCurrentPage(currentPage + 1);
-        // console.log(info.next);
     };
 
     return (
-        <div>
+        <div className={css.wrapPagination}>
             {info && (
                 <>
-                    <button onClick={handleClickPrev} disabled={!info.prev}>
-                        Prev
+                    <button
+                        onClick={handleClickPrev}
+                        disabled={!info.prev}
+                        className={`${css.wrapButton} ${
+                            !info.prev ? css.disabledButton : ""
+                        }`}
+                    >
+                        <img
+                            src={arrowLeftIcon}
+                            alt="Left icon"
+                            className={!info.prev ? css.icon : ""}
+                        />
                     </button>
-                    <div>{currentPage}</div>
-                    <button onClick={handleClickNext} disabled={!info.next}>
-                        Next
+                    <span className={css.text}>{currentPage}</span>
+                    <button
+                        onClick={handleClickNext}
+                        disabled={!info.next}
+                        className={`${css.wrapButton} ${
+                            info.next ? "" : css.disabledButton
+                        }`}
+                    >
+                        <img
+                            src={arrowRightIcon}
+                            alt="Right icon"
+                            className={info.next ? "" : css.icon}
+                        />
                     </button>
                 </>
             )}

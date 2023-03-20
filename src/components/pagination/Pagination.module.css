@@ -1,0 +1,33 @@
+.wrapPagination {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 32px;
+}
+
+.wrapButton {
+    background-color: #02c0da;
+    border: 2px solid #06535f;
+    border-radius: 4px;
+    box-shadow: 0px 1px 5px rgba(0, 0, 43, 0.2),
+        0px 3px 4px rgba(0, 0, 43, 0.12), 0px 2px 4px rgba(0, 0, 43, 0.14);
+    cursor: pointer;
+}
+
+.disabledButton {
+    background-color: #aaff97;
+    border: 2px solid #aaff97;
+    border-radius: 4px;
+    color: rgba(0, 0, 0, 0.5);
+    box-shadow: none;
+    pointer-events: none;
+}
+
+.icon {
+    opacity: 0.5;
+}
+
+.text {
+    font-size: 18px;
+    font-weight: 500;
+}
