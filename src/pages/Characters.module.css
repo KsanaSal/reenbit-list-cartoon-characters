@@ -9,3 +9,14 @@
         width: 600px;
     }
 }
+
+.textError {
+    margin-top: 50px;
+    text-align: center;
+    font-size: 72px;
+    font-weight: 700;
+    font-family: "Times New Roman", Times, serif;
+    font-style: italic;
+    color: #02c0da;
+    text-shadow: 5px 3px 3px rgba(6, 83, 95, 0.4);
+}

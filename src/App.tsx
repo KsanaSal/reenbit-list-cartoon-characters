@@ -9,7 +9,7 @@ function App() {
     return (
         <Routes>
             <Route>
-                <Route path="/" element={<Characters loading={"loading"} />} />
+                <Route path="/" element={<Characters />} />
                 <Route
                     path="details/:id"
                     element={<CharacterDetails />}

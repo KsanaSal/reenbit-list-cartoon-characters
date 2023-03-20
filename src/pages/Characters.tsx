@@ -9,15 +9,17 @@ import CardListCharacter from "../components/cardListCharacter/CardListCharacter
 import Pagination from "../components/pagination/Pagination";
 import getCharactersPagination from "../data/getCharactersPagination";
 
-const Characters = ({ loading }: any) => {
+const Characters = () => {
+    const dataStor = localStorage.getItem("searchString");
+    console.log(dataStor);
     const [characters, setCharacters] = useState<Character[]>([]);
     const [info, setInfo] = useState();
-    
+    const [searchString, setSearchString] = useState(dataStor || "");
 
     useEffect(() => {
         const getCharacters = async () => {
             try {
-                const fetchCharacters = await getSearchCharacters("ri");
+                const fetchCharacters = await getSearchCharacters(searchString);
                 console.log(fetchCharacters);
                 setCharacters(
                     fetchCharacters.results.sort(
@@ -33,13 +35,13 @@ const Characters = ({ loading }: any) => {
                 );
                 setInfo(fetchCharacters.info);
             } catch {
+                setCharacters([]);
                 console.log("first");
             }
         };
         getCharacters();
-    }, []);
+    }, [searchString]);
 
-    console.log(loading);
     const handlePageClick = async (e: any) => {
         console.log(e);
         const fetchCharacters = await getCharactersPagination(e);
@@ -56,6 +58,12 @@ const Characters = ({ loading }: any) => {
         setInfo(fetchCharacters.info);
     };
 
+    const handleSearch = (searchString: string) => {
+        setSearchString(searchString);
+        localStorage.setItem("searchString", searchString);
+        console.log(searchString);
+    };
+
     return (
         <div>
             <img
@@ -64,9 +72,15 @@ const Characters = ({ loading }: any) => {
                 srcSet={`${rickMortyMob} 360w, ${rickMortyDes} 600w`}
                 alt="Logo"
             />
-            <SearchInput />
-            <CardListCharacter characters={characters} />
-            <Pagination info={info} onPageChange={handlePageClick} />
+            <SearchInput onSearch={handleSearch} />
+            {characters.length ? (
+                <>
+                    <CardListCharacter characters={characters} />
+                    <Pagination info={info} onPageChange={handlePageClick} />
+                </>
+            ) : (
+                <p className={css.textError}>Not found</p>
+            )}
         </div>
     );
 };
