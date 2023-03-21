@@ -16,7 +16,6 @@ const CharacterDetails = () => {
             try {
                 if (id) {
                     const fetchCharacter = await getCharacterId(Number(id));
-                    console.log(fetchCharacter);
                     setCharacter(fetchCharacter);
                 }
             } catch {

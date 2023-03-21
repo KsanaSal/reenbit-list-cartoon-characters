@@ -22,7 +22,6 @@ const Characters = () => {
         const getCharacters = async () => {
             try {
                 const fetchCharacters = await getSearchCharacters(searchString);
-                console.log(fetchCharacters);
                 setCharacters(
                     fetchCharacters.results.sort(
                         (char1: Character, char2: Character) =>
@@ -47,9 +46,7 @@ const Characters = () => {
     }, [searchString]);
 
     const handlePageClick = async (e: any) => {
-        console.log(e);
         const fetchCharacters = await getCharactersPagination(e);
-        console.log(fetchCharacters);
         setCharacters(
             fetchCharacters.results.sort((char1: Character, char2: Character) =>
                 char1.name
@@ -65,7 +62,6 @@ const Characters = () => {
     const handleSearch = (searchString: string) => {
         setSearchString(searchString);
         localStorage.setItem("searchString", searchString);
-        console.log(searchString);
     };
 
     return (
