@@ -11,7 +11,6 @@ import getCharactersPagination from "../data/getCharactersPagination";
 
 const Characters = () => {
     const dataStor = localStorage.getItem("searchString");
-    console.log(dataStor);
     const [characters, setCharacters] = useState<Character[]>([]);
     const [info, setInfo] = useState();
     const [searchString, setSearchString] = useState(dataStor || "");
