@@ -1,0 +1,6 @@
+This favicon was generated using the following font:
+
+- Font Title: Charmonman
+- Font Author: Copyright 2018 The Charmonman Project Authors (https://github.com/cadsondemak/Charmonman)
+- Font Source: http://fonts.gstatic.com/s/charmonman/v18/MjQAmiR3vP_nuxDv47jiYC2HmL9K9OhmGnY.ttf
+- Font License: SIL Open Font License, 1.1 (http://scripts.sil.org/OFL))
