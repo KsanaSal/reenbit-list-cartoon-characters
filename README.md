@@ -1,46 +1,45 @@
-# Getting Started with Create React App
+# Виконання тестового завдання на стажування Front-end у Reenbit
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Цей проєкт було розроблено по кейсовому завданню.
 
-## Available Scripts
+## Технічні вимоги
 
-In the project directory, you can run:
+Проєкт розроблений на React.
 
-### `npm start`
+Вигляд сторінок відповідає макету(https://www.figma.com/file/wsndIMMisT3mRUm59NtW6U/Rick-and-Morty-(web-responsive)-(Community)?node-id=0%3A1&t=zXvvbBwrY5qV6cIh-0).
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+HTML/SCSS прописані без використання бібліотек.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Використовується бібліотека react-paginate для виконання пагінації.
 
-### `npm test`
+Для логіну використовується бібліотека firebase і react-firebase-hooks.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Процес створення проєкту
 
-### `npm run build`
+При логіні на сторінку відмальовуються картки персонажів з мультфільму.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+На сторінці список персонажів відсортовується по імені.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Клікнувши на окремого персонажа переходимо на сторінку з більш детальною інформацією персонажа.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Кнопка “go back” перенаправляє на попередній роут зі списком персонажів.
 
-### `npm run eject`
+Реалізований пошук серед персонажів по їх імені.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+При перезавантаженні сторінки чи переході по роутам дані пошуку зберігаються.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Авторизація юзера реалізується через firebase.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Особливості проєкту
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Оскільки бекенд не віддає відсортовані списки то для виконання пункту сортування по імені всіх персонажів потрібно було б зробити 42 запити і зібрати відповіді в один масив; це не зроблено, тому що це не є доцільним з точки зору швидкості отримання даних; краще сортувати на бекенді і віддавати відсортовані списки.
+Сортування реалізовано в межах однієї сторінки.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+
+
+
+
+
+
